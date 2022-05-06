@@ -31,11 +31,11 @@ jobs:
       
     - name: Create an Issue
       if: failure()
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: .github/ultimate_issue_template.md 
+      uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        filename: .github/ultimate_issue_template.md 
           
           
     - uses: codecov/codecov-action@v2
