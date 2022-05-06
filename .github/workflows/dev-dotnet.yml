@@ -24,10 +24,10 @@ jobs:
     - name: Publish Test
       uses: dorny/test-reporter@v1
       if: always()
-        with:
-          name: Test Results on dev
-          path: ./TestResults/*.trx
-          reporter: dotnet-trx
+      with:
+        name: Test Results on dev
+        path: ./TestResults/*.trx
+        reporter: dotnet-trx
     - name: Create Release
       uses: ncipollo/release-action@v1.10.0
       with:
