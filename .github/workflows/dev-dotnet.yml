@@ -23,6 +23,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish Test
       uses: dorny/test-reporter@v1
+      if: always()
         with:
           name: Test Results on dev
           path: ./TestResults/*.trx
