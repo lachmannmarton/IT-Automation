@@ -21,7 +21,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      
+    - name: Publish Test
+      uses: dorny/test-reporter@v1
+        with:
+          name: Test Results on dev
+          path: ./TestResults/*.trx
+          reporter: dotnet-trx
     - name: Create Release
       uses: ncipollo/release-action@v1.10.0
       with:
